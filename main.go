@@ -94,7 +94,7 @@ func render_init() error {
 		return fmt.Errorf("Cannot open stdin to w3mimgdisplay: %v", err)
 	}
 	globals.w3m_proc.Start()
-	globals.tmpdir, err = ioutil.TempDir("", "invaders")
+	globals.tmpdir, err = ioutil.TempDir("", "go_w3mimgdisplay")
 	if err != nil {
 		return fmt.Errorf("Cannot create temporary directory: %v", err)
 	}
@@ -121,7 +121,7 @@ func concurrent_clean() {
 	}
 }
 
-func render_cleanup() {
+func Cleanup() {
 	close(globals.cleanchan)
 	globals.w3m_pipe.Close()
 	globals.w3m_proc.Wait()
