@@ -40,7 +40,7 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"github.com/google/renameio"
+	"github.com/profclems/renameio"
 )
 
 func PrintImage(x, y int, img image.Image) error {
